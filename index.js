@@ -9,7 +9,6 @@ app.use(express.json());
 app.post("/mens", async (req, res) => {
   try {
     const addingMensRecord = new MensRanking(req.body);
-    console.log(req.body);
     const insertMens = await addingMensRecord.save();
     res.send(insertMens);
   } catch (error) {
