@@ -8,10 +8,11 @@ app.use(express.json());
 
 app.post("/mens", async (req, res) => {
   try {
-    const newfile = new MensRanking(req.body);
-    newfile.save();
+    const addingMensRecord = new MensRanking(req.body);
+    console.log(req.body);
+    addingMensRecord.save();
   } catch (error) {
-    res.send(error);
+    res.status(400).send(error);
   }
 });
 
