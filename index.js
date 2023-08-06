@@ -10,14 +10,20 @@ app.post("/mens", async (req, res) => {
   try {
     const addingMensRecord = new MensRanking(req.body);
     console.log(req.body);
-    addingMensRecord.save();
+    const insertMens = await addingMensRecord.save();
+    res.send(insertMens);
   } catch (error) {
     res.status(400).send(error);
   }
 });
 
-app.get("/", async (req, res) => {
-  res.send("hello world");
+app.get("/mens", async (req, res) => {
+  try {
+    const getMens = await MensRanking.find({});
+    res.send(getMens);
+  } catch (error) {
+    res.status(400).send(error);
+  }
 });
 app.listen(port, () => {
   console.log(`connection is live. ${port}`);
