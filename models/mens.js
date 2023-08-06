@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const mensschema = new mongoose.Schema({
+const menSchema = new mongoose.Schema({
   ranking: {
     type: Number,
     required: true,
@@ -33,5 +33,5 @@ const mensschema = new mongoose.Schema({
   },
 });
 //creating new collection
-const MensRanking = new mongoose.model("MenRanking", mensschema);
+const MensRanking = new mongoose.model("MenRanking", menSchema);
 module.exports = MensRanking;

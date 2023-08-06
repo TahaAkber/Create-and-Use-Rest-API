@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const URI = process.env.MONGODB_URL;
 mongoose
   .connect("mongodb://localhost:27017/olympics", {
     useNewUrlParser: true,
@@ -11,3 +10,4 @@ mongoose
   .catch((error) => {
     console.log("no connection successfull", error);
   });
+module.exports = mongoose;
