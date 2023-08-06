@@ -1,15 +1,18 @@
 {
   "name": "create-and-use-rest-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.4.0"
-  }
+    "mongoose": "^7.4.0",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [],
+  "devDependencies": {},
+  "description": ""
 }
