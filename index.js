@@ -28,7 +28,9 @@ app.get("/mens", async (req, res) => {
 app.get("/mens/:id", async (req, res) => {
   try {
     const _id = req.params.id;
-    const getMen = await MensRanking.findById({ _id: _id });
+    const getMen = await MensRanking.findById({ _id: _id }).sort({
+      ranking: 1,
+    });
     res.send(getMen);
   } catch (error) {
     res.status(400).send(error);
